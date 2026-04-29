@@ -17,7 +17,9 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 # ... ваши остальные импорты ...
 
 TOKEN = os.getenv('BOT_TOKEN') # Теперь бот будет брать токен из настроек Amvera
-ADMIN_ID = os.getenv('ADMIN_ID') # То же самое для ID админа (если нужно)
+ADMIN_ID = int(admin_id_raw) if admin_id_raw else None
+
+
 
 
 logging.basicConfig(level=logging.INFO)
