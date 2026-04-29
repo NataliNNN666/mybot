@@ -1,3 +1,4 @@
+import os 
 import datetime
 import asyncio
 import aiohttp
@@ -11,9 +12,13 @@ from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from aiogram.types import BufferedInputFile
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-# --- КОНФИГУРАЦИЯ ---
-TOKEN = 
-ADMIN_ID = 
+ # Добавьте эту строку в самый верх
+
+# ... ваши остальные импорты ...
+
+TOKEN = os.getenv('BOT_TOKEN') # Теперь бот будет брать токен из настроек Amvera
+ADMIN_ID = os.getenv('ADMIN_ID') # То же самое для ID админа (если нужно)
+
 
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=TOKEN)
