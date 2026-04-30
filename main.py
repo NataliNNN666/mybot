@@ -132,7 +132,7 @@ async def send_image(message: types.Message):
 # --- ЗАПУСК ---
 async def main():
     scheduler = AsyncIOScheduler(timezone="Europe/Moscow")
-    scheduler.add_job(send_daily_prediction, "cron", hour=9, minute=0)
+    scheduler.add_job(send_daily_prediction, "cron", hour=12, minute=0)
     scheduler.start()
 
     await bot.delete_webhook(drop_pending_updates=True)
